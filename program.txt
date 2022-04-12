@@ -1,0 +1,7 @@
+i := 1;
+bool := true;
+
+while (i + 2 < 10 and bool = true or i - 3 > 0) do
+    i := i + 1 / 2;
+    bool := false
+end
