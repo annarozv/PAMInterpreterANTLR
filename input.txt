@@ -1,3 +1,9 @@
-x := (10 / 5) + (3 * (7 - 3)); 
-
-write x
+n:= 0; 
+sum:=0; 
+read a; 
+while a > 0 do
+  n:=n+1; 
+  sum:=sum+a; 
+  read a 
+end; 
+write n, sum
