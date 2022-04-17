@@ -14,7 +14,7 @@ class ExtendedVisitor(PAMVisitor):
     def __init__(self):
         # read and convert the input data into the array of numbers
         data = open('data.txt', 'r').read()
-        data_array = data.split(',')
+        data_array = data.split(',') if data != '' else []
 
         # add a class property data_array to be able to use it in methods
         self.data_array = [int(elem) for elem in data_array]
@@ -47,7 +47,7 @@ class ExtendedVisitor(PAMVisitor):
             # (next time some variable will be read, the next element of input array will be taken)
             self.counter += 1
 
-        print(colored(str(self.variable_values), 'blue'))
+        # print(colored(str(self.variable_values), 'blue'))
 
     # Visit a parse tree produced by PAMParser #output_stmt.
     def visitOutput_stmt(self, ctx: PAMParser.Output_stmtContext):
@@ -71,7 +71,7 @@ class ExtendedVisitor(PAMVisitor):
 
         self.variable_values[varname] = expr
 
-        print(colored(str(self.variable_values), 'blue'))
+        # print(colored(str(self.variable_values), 'blue'))
 
     # Visit a parse tree produced by PAMParser #cond_stmt.
     def visitCond_stmt(self, ctx: PAMParser.Cond_stmtContext):

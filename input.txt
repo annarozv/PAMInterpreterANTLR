@@ -1,9 +1,6 @@
-n:= 0; 
-sum:=0; 
-read a; 
-while a > 0 do
-  n:=n+1; 
-  sum:=sum+a; 
-  read a 
-end; 
-write n, sum
+i := 0; 
+
+while i < 5 do 
+    write i;     
+    i := i + 1 
+end

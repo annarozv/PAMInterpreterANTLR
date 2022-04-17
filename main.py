@@ -9,7 +9,6 @@ from ExtendedVisitor import ExtendedVisitor
 
 def main():
     # read code from the text file
-    # code = open('program.txt', 'r').read()
     code = open('input.txt', 'r').read()
 
     # using lexer and parser files set up the parsing process
@@ -17,19 +16,19 @@ def main():
     stream = antlr4.CommonTokenStream(lexer)
     parser = PAMParser(stream)
 
-    # get the syntax tree
+    # get the parse tree
     tree = parser.progr()
 
     # visit the tree (interpret the program)
     visitor = ExtendedVisitor()
-    output = visitor.visit(tree)
+    visitor.visit(tree)
 
     # transform the Tree to the string format and print to console
-    tree_string = Trees.toStringTree(tree, None, parser)
+    # tree_string = Trees.toStringTree(tree, None, parser)
     # print(tree_string)
 
     # draw the tree using nltk library available functionality
-    tree_for_nltk = Tree.fromstring(tree_string)
+    # tree_for_nltk = Tree.fromstring(tree_string)
     # draw_trees(tree_for_nltk)
 
 
